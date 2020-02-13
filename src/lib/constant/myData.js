@@ -2,7 +2,7 @@ const myData = [
   {
     index: 1,
     title: 'Contact',
-    desc: 'https://github.com/astomusic',
+    desc: '',
     flip: false,
   },
   {
@@ -86,7 +86,7 @@ const myData = [
   {
     index: 15,
     title: 'Shuffle',
-    desc: 'Click',
+    desc: '',
     flip: false,
   },
 ];

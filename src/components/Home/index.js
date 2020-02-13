@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import myData from 'src/lib/constant/myData';
@@ -13,10 +13,24 @@ const CardWrapper = styled.div`
 `;
 
 const Home = () => {
+  const [data, setData] = useState(myData);
+
+  const suffleData = () => {
+    let j, x, i;
+    let tempData = [...data];
+    for (i = tempData.length; i; i -= 1) {
+      j = Math.floor(Math.random() * i);
+      x = tempData[i - 1]; 
+      tempData[i - 1] = tempData[j];
+      tempData[j] = x;
+    }
+    setData(tempData);
+  }
+
   return (
     <React.Fragment>
       <CardWrapper>
-        {myData.map(card => <Card key={card.index} data={card} />)}
+        {data.map(card => <Card key={card.index} data={card} suffleData={suffleData} />)}
       </CardWrapper>
     </React.Fragment>
   );
